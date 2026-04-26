@@ -1,15 +1,33 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import FormularioTarefa from './components/FormularioTarefa';
 import Filtros from './components/Filtros';
 import ListaTarefas from './components/ListaTarefas';
 import EstadoVazio from './components/EstadoVazio';
+import ToggleTema from './components/ToggleTema';
 
 function App() {
   // ESTADO PRINCIPAL: lista de tarefas. Cada tarefa é { texto, concluida }
   const [tarefas, setTarefas] = useState([]);
   // Filtro atual: 'todas', 'ativas' ou 'concluidas'
   const [filtro, setFiltro] = useState("todas");
+
+  // Estado do tema: começa com a preferência do sistema (ou o salvo no navegador)
+  const [tema, setTema] = useState(() => {
+    const salvo = localStorage.getItem('tema');
+    if (salvo) return salvo;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  });
+
+  // Aplica o tema ao HTML e salva no navegador toda vez que mudar
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', tema);
+    localStorage.setItem('tema', tema);
+  }, [tema]);
+
+  function alternarTema() {
+    setTema(tema === 'dark' ? 'light' : 'dark');
+  }
 
   // Adiciona uma nova tarefa ao final da lista
   function adicionarTarefa(texto) {
@@ -48,7 +66,8 @@ function App() {
 
   return (
     <div className="container">
-      <header>
+     <header>
+        <ToggleTema tema={tema} onToggle={alternarTema} />
         <h1>
           <span className="emoji">✨</span>
           Minhas Tarefas
