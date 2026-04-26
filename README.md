@@ -119,7 +119,7 @@ Os arquivos finais ficam na pasta `dist/`.
 
 ## 🌐 Deploy
 
-Site publicado em: **[colocar link do Vercel aqui]**
+Site publicado em: **[https://minha-todo-rho.vercel.app/]**
 
 ## 👤 Autora
 
