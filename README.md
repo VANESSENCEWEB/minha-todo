@@ -127,4 +127,4 @@ Site publicado em: **[https://minha-todo-rho.vercel.app/]**
 
 ## 👤 Autora
 
-Vanessa Rafaella
+Vanessa Lima
