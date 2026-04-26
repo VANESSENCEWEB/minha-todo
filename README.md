@@ -2,6 +2,10 @@
 
 Projeto desenvolvido como atividade introdutória de **React**, abordando os conceitos de **componentes, JSX, props e o hook `useState`**.
 
+<p align="center">
+  <img src="./quicklist-screenshot.png" alt="Lista de Tarefas Preview" width="100%">
+</p>
+
 ## 🚀 Tecnologias
 
 - **React 18**
