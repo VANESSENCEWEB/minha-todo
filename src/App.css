@@ -366,7 +366,7 @@ footer {
 /* MODO ESCURO (segue o sistema do Mac) */
 /* MODO ESCURO — controlado manualmente pelo botão */
 [data-theme="dark"] body { color: #e2e8f0; }
-[data-theme="dark"] .container { background: rgba(26, 32, 44, 0.95); }
+[data-theme="dark"] .container { background: rgba(21, 42, 85, 0.95); }
 [data-theme="dark"] h1 { color: #f7fafc; }
 [data-theme="dark"] .subtitulo,
 [data-theme="dark"] .vazio p { color: #cbd5e0; }
